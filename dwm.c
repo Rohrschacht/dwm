@@ -173,6 +173,7 @@ typedef struct {
 	int isfloating;
 	int isterminal;
 	int noswallow;
+	int kill;
 	int monitor;
 } Rule;
 
@@ -370,6 +371,16 @@ applyrules(Client *c)
 			for (m = mons; m && m->num != r->monitor; m = m->next);
 			if (m)
 				c->mon = m;
+			if (r->kill)
+				if (!sendevent(c, wmatom[WMDelete])) {
+					XGrabServer(dpy);
+					XSetErrorHandler(xerrordummy);
+					XSetCloseDownMode(dpy, DestroyAll);
+					XKillClient(dpy, c->win);
+					XSync(dpy, False);
+					XSetErrorHandler(xerror);
+					XUngrabServer(dpy);
+				}
 		}
 	}
 	if (ch.res_class)
