@@ -1614,6 +1614,8 @@ run(void)
 void
 runAutostart(void) {
 	system("killall -q dwmblocks; dwmblocks &");
+	system("cd ~/.dwm; ./autostart_blocking.sh");
+	system("cd ~/.dwm; ./autostart.sh &");
 }
 
 void
