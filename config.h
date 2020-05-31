@@ -146,6 +146,8 @@ static Key keys[] = {
 
 	{ MODKEY,			XK_e,		spawn,		SHCMD("dolphin") },
 	{ MODKEY|ShiftMask|ControlMask,	XK_p,		spawn,		SHCMD("qdbus org.kde.ksmserver /KSMServer logout 1 2 2") },
+	{ MODKEY,			XK_m,		spawn,		SHCMD("thunderbird") },
+	{ MODKEY|ShiftMask,		XK_m,		spawn,		SHCMD("pavucontrol") },
 
 	{ MODKEY,			XK_Tab,		view,		{0} },
 	/* { MODKEY|ShiftMask,		XK_Tab,		spawn,		SHCMD("") }, */
