@@ -145,7 +145,8 @@ static Key keys[] = {
 	/* { MODKEY|ShiftMask,		XK_BackSpace,	spawn,		SHCMD("sysact") }, */
 
 	{ MODKEY,			XK_e,		spawn,		SHCMD("dolphin") },
-	{ MODKEY|ShiftMask|ControlMask,	XK_p,		spawn,		SHCMD("qdbus org.kde.ksmserver /KSMServer logout 1 2 2") },
+	{ MODKEY|ShiftMask|ControlMask, XK_p,		spawn,		SHCMD("qdbus org.kde.ksmserver /KSMServer logout 1 2 2") },
+	{ MODKEY|ShiftMask,		XK_l,		spawn,		SHCMD("loginctl lock-session") },
 	{ MODKEY,			XK_m,		spawn,		SHCMD("thunderbird") },
 	{ MODKEY|ShiftMask,		XK_m,		spawn,		SHCMD("pavucontrol") },
 
